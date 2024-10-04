@@ -1,0 +1,128 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    background: linear-gradient(-45deg, #3ea474, #177a90, #bf7a26, #13239e);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+@keyframes gradient { /*adding color gradient to our background */
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.container{ /* the big container */
+    height: 800px;
+    width: 1500px;
+    background-color: #EDEADE;
+    box-shadow: 10px 10px;
+
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+input:hover{
+    opacity: 0.5;
+}
+.movie-finder-box{ /*movie finder box */
+    height: 75%;
+    width: 600px;
+    background-color: #E2DFD2;
+}
+.movieFinderForm{ /*the Form inside movie finder */
+    height: 100%; /*very important... <form> only takes up height needed by its content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.movie-finder-box > form > *{ /* all 1st children of movie finder Form */
+    width: 75%;
+    height: 50px;
+}
+input[type = "submit"]{ /* the "Search" buttons in homepage */
+    width: 15%;
+    height: 40px;
+    border-radius: 5%;
+    background-color: white;
+}
+.movieID{ /* ID of movie input field */
+    width: 50%;
+}
+#movieYear{ /* Year of movie input field */
+    width: 25%;
+}
+
+
+
+.movie-summary-box{ /* basic movie info container */
+    height: 75%;
+    width: 400px;
+    background-color: #E2DFD2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+h1{
+    text-align: center;
+}
+.movie-summary-box input[type="submit"]{ /*the submit button inside movie-info box in homepage */
+    margin-bottom: 5px;
+}
+.poster-small{ /*The poster image box in homepage */
+    height: 55%;
+    width: 85%;
+}
+.poster img{ /* the poster image itself */
+    height: 100%;
+    width: 100%;
+    margin-top: 5px;
+}
+.short-description{ /* short description box of movie details in homepage which includes plot, year, title */
+    height: 35%;
+    width: 85%;
+    text-align: center;
+    overflow: scroll;
+}
+
+
+
+.poster-big{ /*the bigger poster in detailedMovieInfo */
+    height: 600px;
+    width: 600px;
+    margin-top: 10%;
+}
+.detailed-description{ /*the box containing all detailed movie information */
+    width: 85%;
+    height: auto;
+    margin-top: 2%;
+
+}
+.detailed-description > *{ /* all 1st children of detailed-description <Div> */
+    text-align: center;
+
+}
+#returnButton{ /*the return button in detailedMovieInfo.ejs file */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5%;
+}
+

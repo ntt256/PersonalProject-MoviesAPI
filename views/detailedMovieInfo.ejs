@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/stylesheet.css">
+</head>
+
+<body>
+    <input type="submit" onclick="window.location.href='/' " id="returnButton" value="Back">
+    <div class="poster-big poster">
+        <img src="<%= movieContent.Poster %>" alt="">
+    </div>
+
+    <div class="detailed-description">
+        <h1><%= movieContent.Title %></h1>
+        <p>Year of Release: <%= movieContent.Released %> </p>
+        <p>Description: <%= movieContent.Plot %> </p>
+        <p>Rating: <%= movieContent.Rated %> </p>
+        <p>Director: <%= movieContent.Director %> </p>
+        <p>Actors/Actresses: <%= movieContent.Actors %> </p>
+        <p>Language(s): <%= movieContent.Language %> </p>
+        <p>Duration: <%= movieContent.Runtime %> </p>
+        <p> Movie ID: <%= movieContent.imdbID %> </p>
+    </div>
+
+</body>
+
+</html>

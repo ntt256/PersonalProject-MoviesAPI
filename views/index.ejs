@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/stylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="movie-finder-box">
+            <form action="/submit" class="movieFinderForm" method="POST">
+                <input type="text" name="movieTitle" placeholder="Title of movie...">
+                <input type="number" min="0" name="movieYear" id="movieYear" placeholder="Year of movie..."> <!-- Setting 'min = 0' means number cannot go down to negative-->
+                <p style="margin: 0px; text-align: center; font-size: 2rem;">or</p>
+                <input type="text" name="movieID" class="movieID" id="movieID" placeholder="ID of movie...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
+        <div class="movie-summary-box">
+                <% if(locals.movieContent && locals.movieContent.Response == "True"){ %> <!-- If movie search request to API is successful and there is a movie that matches the criteria-->
+                <div class="poster-small poster">
+                    <img src="<%= movieContent.Poster %>" alt="">
+                </div>
+                <div class="short-description">
+                    <p><%= movieContent.Title %></p>
+                    <p><%= movieContent.Year %></p>
+                    <p><%= movieContent.Plot %></p>
+                </div>
+                <input type="submit" onclick="window.location.href='/detailedMovieInfo' " name="" id="" value="More">
+            <% } else if(locals.movieContent){ %> <!-- if movie API request is successful, but incorrect or empty title, or wrong movie ID-->
+                <h1><%= movieContent.Error %></h1>
+
+            <% } else{ %> <!-- no API requests have been made-->
+                <h1>Find your favorite movies here!</h1>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
