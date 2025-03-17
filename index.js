@@ -1,11 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import env from "dotenv";
 
 let globalMovieInfo;
 const port = 3000;
 const app = express();
-const apiUrl = "http://www.omdbapi.com/?apikey=ec79605a" //API Key is included as query parameter
+env.config()
+const apiUrl = `http://www.omdbapi.com/?${process.env.API_KEY}` //API Key is included as query parameter
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));

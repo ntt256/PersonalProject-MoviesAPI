@@ -29,7 +29,7 @@
                     <p><%= movieContent.Year %></p>
                     <p><%= movieContent.Plot %></p>
                 </div>
-                <input type="submit" onclick="window.location.href='/detailedMovieInfo' " name="" id="" value="More">
+                <input type="submit" onclick="window.location.href='/detailedMovieInfo'" name="" id="" value="More">
             <% } else if(locals.movieContent){ %> <!-- if movie API request is successful, but incorrect or empty title, or wrong movie ID-->
                 <h1><%= movieContent.Error %></h1>
 
